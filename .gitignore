@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Geliştirme Ortamı Ayarları
+.vscode/
+.devcontainer/
+
+# Ödev PDF'i (Bilgisayarınızda kalacak, GitHub'a asla yüklenmeyecek)
+BLG_223E___Project_2___2024_.pdf

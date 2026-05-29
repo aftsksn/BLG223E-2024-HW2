@@ -15,13 +15,13 @@ TEST_LIB = $(TEST_LIB_DIR)/munit.c
 CFLAGS=-I$(INC_DIR)
 TFLAGS=-I$(INC_DIR) -I$(TEST_LIB_DIR) -fpermissive -w
 
-SRCS = $(wildcard $(SRC_DIR)/*.c)
+SRCS = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 BIN  = $(BIN_DIR)/$(BIN_NAME)
-NON_MAIN_SRC = $(filter-out src/main.c, $(wildcard src/*.c))
+NON_MAIN_SRC = $(filter-out src/main.cpp, $(wildcard src/*.cpp))
 
 $(OBJS): 
-	$(CC) -g -c $(patsubst $(OBJ_DIR)%.o, $(SRC_DIR)%.c, $@) -o $@ $(CFLAGS)	
+	$(CC) -g -c $(patsubst $(OBJ_DIR)%.o, $(SRC_DIR)%.cpp, $@) -o $@ $(CFLAGS)		
 
 build: $(OBJS)	
 	$(CC) -g -o $(BIN) $^ $(CFLAGS)
